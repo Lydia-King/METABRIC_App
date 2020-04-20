@@ -298,7 +298,7 @@ ui <- dashboardPage(
                                                         box(title = "Lollipop Plot 3", width = 12, solidHeader = T, status = "primary", plotOutput("lol3", height = "480px")))),
                         # Other Plots  
                         tabPanel("Other Plots", id = "tabsetMAFother", box(title = "Mutation Load Plot", width = 12, solidHeader = T, status = "primary", plotOutput("Mutload", height = "500px")),
-                     #   box(title = "Somatic Interaction Plot", width  = 12, solidHeader = T, status = "primary", plotOutput("VAF1", height = "500px")), 
+                         box(title = "Somatic Interaction Plot", width  = 12, solidHeader = T, status = "primary", plotOutput("VAF1", height = "500px")), 
                          box(title = "Genecloud", width = 12, solidHeader = T, status = "primary", plotOutput("Gcloud", height = "500px")))))
         ))))
                  
@@ -838,7 +838,7 @@ output$oncostripMAF <- renderPlot({oncostrip(dataInputMAFPLOT(), genes = c(input
 output$TandT <- renderPlot({laml.titv = titv(maf = dataInputMAFPLOT(), plot = FALSE, useSyn = TRUE)
 plotTiTv(res = laml.titv) })
 output$Mutload <- renderPlot({laml.mutload = tcgaCompare(maf = dataInputMAFPLOT(), cohortName = 'Our Data')})
-# output$VAF1 <- renderPlot({somaticInteractions(maf = dataInputMAFPLOT(), top =5, pvalue = c(0.05, 0.1))})
+output$VAF1 <- renderPlot({somaticInteractions(maf = dataInputMAFPLOT(), top =5, pvalue = c(0.05, 0.1))})
 output$Gcloud <- renderPlot({geneCloud(input = dataInputMAFPLOT(), minMut = 3)})
 
 # Lollipop plot 
