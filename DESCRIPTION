@@ -1,4 +1,4 @@
-Package: METABRIC_App
+Package: METABRICApp
 Title: Specific functions for analysing cBioPortal Files
 Version: 0.0.0.9000
 Authors@R: person("Lydia", "King", email = "L.King18@nuigalway.ie", role = "cre")
